@@ -7,7 +7,8 @@ output: html_notebook
 
 library(tidyverse)
 df <- read.csv('../data/world-development-indicators/Indicators.csv')
-head(df)
+temp <- df %>% select(CountryName,IndicatorName,Value)
+head(temp)
 ```
 ```{r}
 life_df <- subset(df,grepl('life',IndicatorName,ignore.case=TRUE))
@@ -19,8 +20,6 @@ print(items)
 ```{r}
 
 female_life_df <- subset(life_df,(IndicatorName==items[1]))
-
-
 
 life_analysis_female_df <- female_life_df %>% select(CountryCode,Value) %>% group_by(CountryCode) %>% summarise_all(funs(mean,sd))
 
