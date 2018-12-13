@@ -1,0 +1,29 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(data.table)
+
+
+df <- fread('../data/Country.csv')
+head(df)
+```
+
+```{r}
+library(plotly)
+source('../scripts/plotfunctions.R')
+
+
+country_distribution(df)
+```
+
+```{r}
+
+```
+
+```{r}
+coun
+```
+
